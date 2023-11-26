@@ -1,0 +1,24 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.svelte";
+
+const { title, description } = Astro.props;
+const links = [
+        {label:"Home",link:"/"},
+        {label:"Blog",link:"/blog"},
+        {label:"About",link:"/about"},
+    ]
+const { pathname } = Astro.url;
+const isActive = pathname.replace(/\/$/, '');
+---
+
+<html lang="en">
+	<head>
+        <script is:inline src="./node_modules/preline/dist/preline.js"></script>
+		<BaseHead title={title} description={description} />
+    </head>
+    <body>
+        <Header links={links} activeLink={isActive} />
+        <slot/>
+    </body>
+</html>
