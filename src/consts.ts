@@ -5,6 +5,7 @@ export const SITE_TITLE = 'Supass web';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
 export const SITE_LINKS = [
     {label:"Home",link:"/"},
+    {label:"Project",link:"/project"},
     {label:"Blog",link:"/blog"},
     {label:"About",link:"/about"},
 ]

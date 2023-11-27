@@ -1,7 +1,7 @@
 <script>
     export let logo = "https://avatars.githubusercontent.com/u/112678332?v=4"
     export let title = ""
-    export const links = [
+    export let links = [
         {label:"Home",link:"/"},
         {label:"Blog",link:"/blog"},
         {label:"About",link:"/about"},

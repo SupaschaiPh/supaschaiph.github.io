@@ -3,6 +3,7 @@ import Common from '../../layouts/Common.astro'
 import { getCollection } from 'astro:content';
 import BlogCard from '../../components/BlogCard.svelte'
 import BlogCardTop from '../../components/BlogCardTop.svelte'
+import { fade } from 'astro:transitions';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -16,7 +17,7 @@ const posts = (await getCollection('blog')).sort(
 			<hr/>
 		</div>
 		<div class="w-10/12 md:w-8/12 pt-8">
-			<BlogCardTop title={posts[0]?.data?.title} desc={posts[0]?.data?.description} heroImg={posts[0]?.data?.heroImage} />
+			<BlogCardTop title={posts[0]?.data?.title} desc={posts[0]?.data?.description} href={"/blog/"+posts[0]?.slug} heroImg={posts[0]?.data?.heroImage} />
 		</div>
 		<div class="w-10/12 md:w-8/12 grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 py-6 md:py-12">
 			{

@@ -6,14 +6,14 @@
     export let heroImg = ""
 
 </script>
-<a href="{href}" class="h-[38vh] overflow-hidden bg-white border rounded-xl shadow-sm sm:flex dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] hover:shadow-lg transition">
-    <div class="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-[15rem] md:rounded-se-none md:max-w-xs">
-      <img class="w-full h-full  absolute top-0 start-0 object-cover" src="{heroImg}" alt="Image">
+<a href="{href}" class="h-[38vh] overflow-hidden bg-white border rounded-xl shadow-sm flex dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] hover:shadow-lg transition">
+    <div class="w-1/2 p-6 ">
+      <img class="w-full h-full object-cover" src="{heroImg}" alt="Image">
     </div>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap w-1/2">
       <div class="p-4 flex flex-col h-full sm:p-7">
         <h3 class="text-lg font-bold text-gray-800 dark:text-white">
-          Card title
+          {title}
         </h3>
         <p class="mt-1 text-gray-500 dark:text-gray-400 truncate whitespace-pre-line text-base">
           {desc}

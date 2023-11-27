@@ -1,22 +1,23 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.svelte";
 import { SITE_TITLE,SITE_DESCRIPTION,SITE_LINKS } from "../consts";
 import '@fontsource-variable/noto-sans-thai';
 
-//const { title, description } = Astro.props;
-const links = SITE_LINKS
+const { title, description } = Astro.props;
 const { pathname } = Astro.url;
-const isActive = pathname;
+const isActive = pathname?.length > 1 ? "/"+pathname.replaceAll("/","") : pathname;
 ---
 
 <html lang="en">
 	<head>
         <script is:inline src="/script/preline.js"></script>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+        <ViewTransitions/>
     </head>
     <body class="static">
-        <Header title={SITE_TITLE} links={links} activeLink={isActive} />
+        <Header title={SITE_TITLE} links={SITE_LINKS} activeLink={isActive} />
         <slot/>
     </body>
 </html>
